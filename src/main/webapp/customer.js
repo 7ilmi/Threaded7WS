@@ -4,7 +4,7 @@
 function getCustomer(custId)
 {
     $.get(
-        "http://localhost:8080/JSPFAll2022Day7REST-1.0-SNAPSHOT/api/customer/getcustomer/"+custId,
+        "http://localhost:8080/JSPDay7ResteasyJPACORS-1.0-SNAPSHOT/api/customer/getcustomer/"+custId,
         function (data)
         {
             $("#customerId").val(data.customerId);
@@ -19,6 +19,7 @@ function getCustomer(custId)
             $("#custBusPhone").val(data.custBusPhone);
             $("#custEmail").val(data.custEmail);
             $("#agentId").val(data.agentId);
+            console.log(data.agentId);
         }
     )
 }
@@ -27,7 +28,7 @@ function getCustomer(custId)
 //passes the param value to the getCustomer selection//
 $(function(){
     $.get(
-        "http://localhost:8080/JSPFAll2022Day7REST-1.0-SNAPSHOT/api/customer/getallcustomers",
+        "http://localhost:8080/JSPDay7ResteasyJPACORS-1.0-SNAPSHOT/api/customer/getallcustomers",
         function(data)
         {
             for(i=0; i <data.length; i++)
@@ -47,7 +48,7 @@ $(function(){
 //does not pass any param//
 $(function(){
     $.get(
-        "http://localhost:8080/JSPFAll2022Day7REST-1.0-SNAPSHOT/api/customer/getallcustomers",
+        "http://localhost:8080/JSPDay7ResteasyJPACORS-1.0-SNAPSHOT/api/customer/getallcustomers",
         function(data)
         {
             for(i=0; i <data.length; i++)
@@ -77,7 +78,7 @@ $(function(){
 //does not pass any param//
 $("#btnDelete").click(function(){
     $.ajax({
-        url:"http://localhost:8080/JSPFAll2022Day7REST-1.0-SNAPSHOT/api/customer/deletecustomer/"
+        url:"http://localhost:8080/JSPDay7ResteasyJPACORS-1.0-SNAPSHOT/api/customer/deletecustomer/"
             + $("#customerId").val(),
         method:"DELETE",
         config: {
@@ -94,7 +95,7 @@ $("#btnDelete").click(function(){
 //retrieves customer count - sends to <p id="customerCount"></p> //
 $(function(){
     $.get(
-        "http://localhost:8080/JSPFAll2022Day7REST-1.0-SNAPSHOT/api/customer/getallcustomers",
+        "http://localhost:8080/JSPDay7ResteasyJPACORS-1.0-SNAPSHOT/api/customer/getallcustomers",
         function(data)
         {
             $("#customerCount").text("Total Customers: " + data.length);

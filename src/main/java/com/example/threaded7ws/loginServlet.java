@@ -12,8 +12,8 @@ import java.sql.*;
 
 @WebServlet(name = "loginServlet", value = "/loginServlet",
         initParams = {@WebInitParam(name = "dburl", value = "jdbc:mariadb://localhost:3306/travelexperts" ),
-                @WebInitParam(name = "dbuser", value = "harv" ),
-                @WebInitParam(name = "dbpassword", value = "password" )
+                @WebInitParam(name = "dbuser", value = "torres" ),
+                @WebInitParam(name = "dbpassword", value = "pass123456" )
         })
 public class loginServlet extends HttpServlet {
     @Override
@@ -39,7 +39,7 @@ public class loginServlet extends HttpServlet {
         {
             try {
                 Connection conn = DriverManager.getConnection(
-                        "jdbc:mariadb://localhost:3306/travelexperts", "root","password");
+                        "jdbc:mariadb://localhost:3306/travelexperts", "torres","pass123456");
                 String sql = "select agtpassword from agents where agtuserid=?";
                 PreparedStatement stmt = conn.prepareStatement(sql);
                 stmt.setString(1, userid);
