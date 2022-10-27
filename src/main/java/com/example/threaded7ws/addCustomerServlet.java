@@ -3,7 +3,6 @@ package com.example.threaded7ws;
 import com.google.gson.Gson;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,16 +13,11 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-@WebServlet(name = "editCustomerServlet", value = "/editCustomerServlet",
-        initParams = {@WebInitParam(name = "dburl", value = "jdbc:mariadb://localhost:3306/travelexperts" ),
-                @WebInitParam(name = "dbuser", value = "harv" ),
-                @WebInitParam(name = "dbpassword", value = "password" )
-        })
-public class editCustomerServlet extends HttpServlet {
+@WebServlet(name = "addCustomerServlet", value = "/addCustomerServlet")
+public class addCustomerServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String custId = request.getParameter("customerId");
         String custFirstName = request.getParameter("custFirstName");
         String custLastName = request.getParameter("custLastName");
         String custAddress = request.getParameter("custAddress");
@@ -35,18 +29,16 @@ public class editCustomerServlet extends HttpServlet {
         String custBusPhone = request.getParameter("custBusPhone");
         String custEmail = request.getParameter("custEmail");
         String agtId = request.getParameter("agentId");
-
         //if ids are valid
-        if(custId != null && !custId.equals("") && custId.chars().allMatch( Character::isDigit) &&
-                (agtId != null && (agtId.equals("") || agtId.chars().allMatch( Character::isDigit)))){
+        if((agtId != null && (agtId.equals("") || agtId.chars().allMatch( Character::isDigit)))){
 
-            Customer cust = new Customer(custId, custFirstName, custLastName, custAddress, custCity, custProv,
+            Customer cust = new Customer(null, custFirstName, custLastName, custAddress, custCity, custProv,
                     custPostal, custCountry, custHomePhone, custBusPhone, custEmail, agtId);
 
-            URL url = new URL("http://localhost:8080/JSPDay7ResteasyJPACORS-1.0-SNAPSHOT/api/customer/putcustomer");
+            URL url = new URL("http://localhost:8080/JSPDay7ResteasyJPACORS-1.0-SNAPSHOT/api/customer/postcustomer");
             HttpURLConnection httpCon = (HttpURLConnection) url.openConnection();
             httpCon.setDoOutput(true);
-            httpCon.setRequestMethod("PUT");
+            httpCon.setRequestMethod("POST");
             httpCon.setRequestProperty("Content-Type", "application/json");
             OutputStreamWriter out = new OutputStreamWriter(httpCon.getOutputStream());
 

@@ -25,8 +25,7 @@
 <div style="display: flex; justify-content: center">
     <a asp-controller="Login" href="login.jsp" class="btn btn-success m-4" role="button">Register</a>
     <a asp-controller="Login" href="login.jsp" class="btn btn-secondary m-4" role="button">Login</a>
-<%--    <a asp-controller="Login" href="login.jsp" class="btn btn-success m-4" role="button">Packages</a>--%>
-<%--    <a asp-controller="Login" href="login.jsp" class="btn btn-secondary m-4" role="button">Contact</a>--%>
+
 
 
 
@@ -58,7 +57,4 @@
     </div>
 </div>
 
-<body>
-
-</body>
 </html>

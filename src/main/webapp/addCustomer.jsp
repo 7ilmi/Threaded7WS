@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="site.css" />
 
 </head>
+
 <body>
+
 <nav class="navbar navbar-expand-lg bg-primary navbar-light box-shadow mb-3">
     <div class="container-fluid">
         <img style="width: 100%; height: 40vh; position: absolute; top: 0px; left: 0px; z-index: -2; object-fit: cover;" src="css/Images/polynesia.jpg" />
@@ -19,24 +21,14 @@
 </div>
 
 <br/><br/>
-
 <div class="container">
     <div class="my-text">
-        <h2>Customer Details</h2>
+        <h2>Add a Customer</h2>
         <hr>
-        <p class="lead">Please Select a Customer</p>
-        <select id="customerSelect" onchange="getCustomer(this.value);">
-            <option value="default">Select a customer</option>
-        </select>
     </div>
-    <br/>
-    <form style="margin-bottom:20px;" action="editCustomerServlet" method="post">
-        <div class="row">
-            <div class="col-md-3 mb-3">
-                <label class="control-label font-weight-bold">Customer ID</label>
-                <input id="customerId" name="customerId" type="number"  readonly="readonly"/>
-            </div>
-        </div>
+    <br>
+
+    <form style="margin-bottom:20px;" action="addCustomerServlet" method="post">
         <div class="row">
             <div class="col-md-3 mb-3">
                 <label class="control-label font-weight-bold">First Name</label>

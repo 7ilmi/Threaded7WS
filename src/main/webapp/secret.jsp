@@ -32,7 +32,7 @@
 
 <body>
 <br/>
-<h5>select an option </h5>
+<h5>Please Select an Option </h5>
 
 <br/>
     <jsp:include page="navigationAdmin.jsp" />

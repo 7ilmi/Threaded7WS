@@ -22,76 +22,78 @@
 
 <div class="container">
     <div class="my-text">
-        <h2>Customer Details</h2>
+        <h2>Delete Customer</h2>
         <hr>
-        <p class="lead">Please Select a Customer</p>
+        <p class="lead">Select a customer to Delete</p>
         <select id="customerSelect" onchange="getCustomer(this.value);">
             <option value="default">Select a customer</option>
         </select>
+
     </div>
-    <br/>
-    <form style="margin-bottom:20px;" action="editCustomerServlet" method="post">
+    <br>
+    <form style="margin-bottom:20px;" action="deleteCustomerServlet" method="post">
         <div class="row">
             <div class="col-md-3 mb-3">
                 <label class="control-label font-weight-bold">Customer ID</label>
-                <input id="customerId" name="customerId" type="number"  readonly="readonly"/>
+                <input id="customerId" name="customerId" type="number" readonly="readonly"/>
             </div>
         </div>
         <div class="row">
             <div class="col-md-3 mb-3">
                 <label class="control-label font-weight-bold">First Name</label>
-                <input id="custFirstName" name="custFirstName" class="form-control" type="text" />
+                <input id="custFirstName" class="form-control" type="text" readonly="readonly"/>
             </div>
             <div class="col-md-3 mb-3">
                 <label class="control-label font-weight-bold">Last Name</label>
-                <input id="custLastName" name="custLastName" class="form-control" type="text" />
+                <input id="custLastName" class="form-control" type="text" readonly="readonly"/>
             </div>
         </div>
         <div class="row">
             <div class="col-md-6 mb-3">
                 <label class="control-label font-weight-bold">Address</label>
-                <input id="custAddress" name="custAddress" class="form-control" type="text" />
+                <input id="custAddress" class="form-control" type="text" readonly="readonly"/>
             </div>
             <div class="col-md-3 mb-3">
                 <label class="control-label font-weight-bold">City</label>
-                <input id="custCity" name="custCity" class="form-control" type="text" />
+                <input id="custCity" class="form-control" type="text" readonly="readonly"/>
             </div>
         </div>
         <div class="row">
             <div class="col-md-3 mb-3">
                 <label class="control-label font-weight-bold">Province</label>
-                <input id="custProv" name="custProv" class="form-control" type="text" />
+                <input id="custProv" class="form-control" type="text" readonly="readonly"/>
             </div>
             <div class="col-md-3 mb-3">
                 <label class="control-label font-weight-bold">Postal Code</label>
-                <input id="custPostal" name="custPostal" class="form-control" type="text" />
+                <input id="custPostal" class="form-control" type="text" readonly="readonly"/>
             </div>
             <div class="col-md-3 mb-3">
                 <label class="control-label font-weight-bold">Country</label>
-                <input id="custCountry" name="custCountry" class="form-control" type="text" />
+                <input id="custCountry" class="form-control" type="text" readonly="readonly"/>
             </div>
         </div>
         <div class="row">
             <div class="col-md-3 mb-3">
                 <label class="control-label font-weight-bold">Home Phone</label>
-                <input id="custHomePhone" name="custHomePhone" class="form-control" type="text" />
+                <input id="custHomePhone" class="form-control" type="text" readonly="readonly"/>
             </div>
             <div class="col-md-3 mb-3">
                 <label class="control-label font-weight-bold">Business Phone</label>
-                <input id="custBusPhone" name="custBusPhone" class="form-control" type="text" />
+                <input id="custBusPhone" class="form-control" type="text" readonly="readonly"/>
             </div>
         </div>
         <div class="row">
             <div class="col-md-3 mb-3">
                 <label class="control-label font-weight-bold">Email</label>
-                <input id="custEmail" name="custEmail" class="form-control" type="text" />
+                <input id="custEmail" class="form-control" type="text" readonly="readonly"/>
             </div>
             <div class="col-md-3 mb-3">
                 <label class="control-label font-weight-bold">Agent ID</label>
-                <input id="agentId" name="agentId" class="form-control" type="number" />
-                <input type="submit" >
+                <input id="agentId" class="form-control" type="number" readonly="readonly"/>
+
 
             </div>
+            <button type="submit">Delete</button>
         </div>
     </form>
 </div>

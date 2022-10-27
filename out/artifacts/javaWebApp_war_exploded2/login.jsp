@@ -1,7 +1,6 @@
 <head>
     <title>Travel Experts Prototype Login</title>
 </head>
-<%--<jsp:include page="header.jsp" />--%>
 <body>
 <%--
   Created by IntelliJ IDEA.
@@ -15,7 +14,6 @@
 <head>
     <title>Travel Experts JSP Prototype</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
     <link rel="stylesheet" href="site.css" />
 </head>
 
@@ -26,34 +24,16 @@
 <div style="margin-top: 15vh; margin-bottom: 15vh;" class="text-center">
     <h1 class="display-4 text-light" style="text-shadow: 2px 2px 4px #000000;">Welcome to Travel Experts!</h1>
 </div>
-
-
-
-
-
 </html>
-<%--
 <form method="get" action="loginServlet">
-    <div class="form-group">
-        <label for="exampleInputEmail1">User Name</label>
-        <input type="text" class="form-control" id="userid"  placeholder="Enter user">
 
-    </div>
-    <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="password" placeholder="Password">
-    </div>
+<%--    User Name: <input type="text" name="userid"  /> <br/>--%>
+    <div class="row">
+        <div class="col-md-3 mb-3">
+            <label class="control-label font-weight-bold">User Name:</label>
+            <input type="text" name="userid"    /> <br/>
 
-
-    </div>
-    <button type="submit" class="btn btn-primary">Login</button>
-</form>
---%>
-
-
-<form method="get" action="loginServlet">
-    User Name: <input type="text" name="userid" /> <br/>
-    Password:  <input type="password" name="password" /><br/>
+     <input type="password" name="password" /><br/>
     <button type="submit">LOGIN</button>
 </form>
 <%

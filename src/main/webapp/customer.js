@@ -19,7 +19,6 @@ function getCustomer(custId)
             $("#custBusPhone").val(data.custBusPhone);
             $("#custEmail").val(data.custEmail);
             $("#agentId").val(data.agentId);
-            console.log(data.agentId);
         }
     )
 }
